@@ -1,0 +1,322 @@
+body{
+    width: 1490px;
+    height: 100vh;
+    overflow: scroll;
+   
+}
+
+.heading{
+    width: 550px;
+    height: 40px;
+    background-color: aliceblue;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+.base{
+    width: 1520px;
+    height: 670px;
+    background-color:white;
+    top: 70px;
+    position: absolute;
+    text-align: center;
+    
+    border-radius: 10px;
+    
+}
+
+.instruction{
+    width: 27%;
+    height: 97%;
+    background-color: rgb(46, 125, 170);
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 10px;  
+    overflow-y: scroll;
+    float: left;
+   
+}
+.inshead{
+    width: 70%;
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 0px 0px 5px 5px;
+    
+}
+
+.playground{
+    width: 71%;
+    height: 97%;
+    background-color: whitesmoke;
+    margin-left: 14px;
+    margin-top: 10px;
+    border-radius: 10px;  
+    border: 10px solid rgb(46, 125, 170);
+    float:right ;
+}
+
+  .components{
+      width: 100%;
+      height: 55px;
+      padding-left: 85%;
+      padding-top: 8px;
+  }
+
+.topground{
+    visibility: visible;
+    width: 90%;
+    height: 65%;
+    background-image: url(images/telcircuit.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto;
+    background-color: rgb(169, 235, 236);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#R1{
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    margin-top: 135px;
+    margin-left: -80px;
+    border: 2px solid rgb(17, 138, 238);
+    border-radius: 3px;
+}
+#R2{
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    margin-top: 135px;
+    margin-left: 120px;
+    border: 2px solid rgb(17, 138, 238);
+    border-radius: 3px;
+}
+#R3{
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    margin-top: 255px;
+    margin-left: 50px;
+    border: 2px solid rgb(17, 138, 238);
+    border-radius: 3px;
+}
+
+#V1{
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    margin-top: 218px;
+    margin-left: -310px;
+    border: 2px solid rgb(17, 138, 238);
+    border-radius: 3px;
+}
+#V2{
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    margin-top: 222px;
+    margin-left: 260px;
+    border: 2px solid rgb(17, 138, 238);
+    border-radius: 3px;
+}
+
+
+#VA1{
+    position: absolute;
+    margin-top: 212px;
+    margin-left: -400px;
+    width: 60px;
+    height: 25px;
+    font-size: small;
+    padding: 0;
+    
+}
+
+
+#VA2{
+    position: absolute;
+    margin-top: 218px;
+    margin-left: 345px;
+    width: 60px;
+    height: 25px;
+    font-size: small;
+    padding: 0;
+    
+}
+
+.bottomground{
+    width: 99%;
+    height: 30%;
+    background-color: rgb(240, 211, 174);
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: left;
+    padding: 10px;
+}
+
+.checker{
+    width: 900px;
+    height: 40px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: -25px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mid{
+    width: 100px;
+    background-color: rgb(230, 222, 111);
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.midl{
+    width: 40px;
+}
+
+ 
+.tableHeading{
+    width: 1340px;
+    height: 44px;
+    background-color: azure;
+    position: absolute;
+    margin-top: 800px;
+    text-align: center;
+    margin-left: 65px;
+    border-radius: 5px;
+}
+.clear{
+    font-size: large;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 450px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.dataTable{
+    width: 100%;
+    height: 350px;
+    background-color: white;
+    margin: 0 auto;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  table {
+    width: 100%;
+    background-color: white;
+    
+  }
+
+  table, th, td {
+    border: 2px solid black;
+    border-collapse: separate;
+  }
+
+  #th{
+    border: 2px solid black;
+    border-collapse: separate;
+    text-align: center;
+  }
+.td{
+    border: 1px solid black;
+    border-collapse: separate;
+    text-align: center;
+}
+
+.run{
+    border: 2px solid black;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    margin-left: 300px;
+    margin-top: 10px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+.add{
+    border: 2px solid black;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    margin-left: 360px;
+    margin-top: 10px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+.mid{
+    margin-left: 10px;
+}
+.but {
+    padding: 4px 10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px #999;
+  }
+  
+  .but:hover {background-color: #3e8e41}
+  
+  .but:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
+  .steps{
+      color: white;
+      text-align: left;
+      padding: 15px;
+  }
+
+  .print{
+    font-size: large;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 380px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .print:hover {background-color: #3e8e41}
+  
+  .print:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
+  .clear:hover {background-color: #3e8e41}
+  
+  .clear:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
