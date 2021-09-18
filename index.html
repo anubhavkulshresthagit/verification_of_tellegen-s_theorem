@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Tellegens's Theorem</title>
+  </head>
+  <body style="background-color: #33adff;">
+      <div class="heading">
+          <h4>AIM :- Verification of Tellegen's theorem.</h4>
+      </div>
+
+    <div class="base">
+        <div class="instruction">
+          <div class="inshead">
+            <h4>Instruction</h4>
+          </div>
+          <div class="steps">
+            <p><b>Select the "V1" and "V2" to short or open as per your choice.</b></p>
+            <p>1. Construct the appropriate circuit and set the value of "R1", "R2", "R3", and "V1", "V2".</p>
+            <p>2. Click of "RUN" button.</p>
+            <p>3. Power by different source will be shown below the circuit, read corresponding power values.</p>
+            <p>4. Click on "Add to Table" button to add values of "R1", "R2", "R3", and "V1", "V2" for future purpose.</p>
+            <br>
+            <br>
+            <p><b>Note:-</b>All the Resistance are in ohms(Ω) and Voltage are in volt(v).</p>
+          </div>
+
+         </div>
+
+ <!-- playground -->
+        <div class="playground">
+
+        <div class="topground">
+          <button class="run but" onclick="verify()">RUN</button>
+          <button class="add but" onclick="addToTable()">Add to Table</button>
+          <input id="R1" type="number" value="100"> 
+          <input id="R2" type="number" value="100"> 
+          <input id="R3" type="number" value="100"> 
+          <input id="V1" type="number" value="10"> 
+          <input id="V2" type="number" value="10"> 
+
+          
+
+          <select name="Open" id="VA1" onclick="V1Change()">
+           
+              <option value="Open">Open</option>
+              <option value="Short">Short</option>
+           
+          </select>
+          <select name="Open" id="VA2" onclick="V2Change()">
+           
+            <option value="Open">Open</option>
+            <option value="Short">Short</option>
+         
+        </select>
+        </div>
+        <div class="bottomground">
+          <h5><u>Verifying the tellegen's theorem</u> :- Summation of power through each source present in circuit is equal to zero.</h5>
+          <b>So, According to this theorem ...</b><br><br>
+          <pre class="tab" style="text-align: left; font-size: large;">          Power by V1  +  Power by V2 + Power by R1 +  Power by R2  + Power by R3   =     0</p></pre>
+            <div class="checker">
+              <input class="mid" id="V1check" type="number" value="0" readonly="readonly"> 
+              <input class="mid" id="V2check" type="number" value="0" readonly="readonly">
+              <input class="mid" id="R1check" type="number" value="0" readonly="readonly"> 
+              <input class="mid" id="R2check" type="number" value="0" readonly="readonly"> 
+              <input class="mid" id="R3check" type="number" value="0" readonly="readonly"> 
+          
+              <p>=</p>
+              <input class="mid midl" id="total" type="number" value="0" readonly="readonly"> 
+            </div>
+        </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+   
+
+    <div class="tableHeading">
+     <h2>OBSERVATION TABLE <Button type="button" onclick="location.reload()" class="clear primary">Clear</Button></h2> 
+      <br>
+     
+      <table id="Table">
+        <tbody>
+        <tr>
+          <th id="th" rowspan="2">Sr.No.</th>
+          <th id="th" colspan="2">R1</th>
+          <th id="th" colspan="2">R2</th>
+          <th id="th" colspan="2">R3</th>
+          <th id="th" colspan="2">V1.</th>
+          <th id="th" colspan="2">V2</th>
+          <th id="th" rowspan="2">I1</th>
+          <th id="th" rowspan="2">I2</th>
+        </tr>
+        <tr>
+          <th id="th">Resistance(R1)</th>
+          <th id="th">Power(R1)</th>
+          <th id="th">Resistance(R2)</th>
+          <th id="th">Power(R2)</th>
+          <th id="th">Resistance(R3)</th>
+          <th id="th">Power(R3)</th>
+          <th id="th">Resistance(V1)</th>
+          <th id="th">Power(V1)</th>
+          <th id="th">Resistance(V2)</th>
+          <th id="th">Power(V2)</th>
+        </tr>
+        <tr>
+          <td class="td">1.</td>
+          <td class="td" id="R1Value_1"></td>
+          <td class="td" id="R1Power_1"></td>
+          <td class="td" id="R2Value_1"></td>
+          <td class="td" id="R2Power_1"></td>
+          <td class="td" id="R3Value_1"></td>
+          <td class="td" id="R3Power_1"></td>
+          <td class="td" id="V1Value_1"></td>
+          <td class="td" id="V1Power_1"></td>
+          <td class="td" id="V2Value_1"></td>
+          <td class="td" id="V2Power_1"></td>
+          <td class="td" id="I1Value_1"></td>
+          <td class="td" id="I2Value_1"></td>
+         
+        </tr>
+        <tr>
+          <td class="td">2.</td>
+          <td class="td" id="R1Value_2"></td>
+          <td class="td" id="R1Power_2"></td>
+          <td class="td" id="R2Value_2"></td>
+          <td class="td" id="R2Power_2"></td>
+          <td class="td" id="R3Value_2"></td>
+          <td class="td" id="R3Power_2"></td>
+          <td class="td" id="V1Value_2"></td>
+          <td class="td" id="V1Power_2"></td>
+          <td class="td" id="V2Value_2"></td>
+          <td class="td" id="V2Power_2"></td>
+          <td class="td" id="I1Value_2"></td>
+          <td class="td" id="I2Value_2"></td>
+         
+        </tr>
+        <tr>
+          <td class="td">3.</td>
+          <td class="td" id="R1Value_3"></td>
+          <td class="td" id="R1Power_3"></td>
+          <td class="td" id="R2Value_3"></td>
+          <td class="td" id="R2Power_3"></td>
+          <td class="td" id="R3Value_3"></td>
+          <td class="td" id="R3Power_3"></td>
+          <td class="td" id="V1Value_3"></td>
+          <td class="td" id="V1Power_3"></td>
+          <td class="td" id="V2Value_3"></td>
+          <td class="td" id="V2Power_3"></td>
+          <td class="td" id="I1Value_3"></td>
+          <td class="td" id="I2Value_3"></td>
+         
+        </tr>
+        <tr>
+          <td class="td">4.</td>
+          <td class="td" id="R1Value_4"></td>
+          <td class="td" id="R1Power_4"></td>
+          <td class="td" id="R2Value_4"></td>
+          <td class="td" id="R2Power_4"></td>
+          <td class="td" id="R3Value_4"></td>
+          <td class="td" id="R3Power_4"></td>
+          <td class="td" id="V1Value_4"></td>
+          <td class="td" id="V1Power_4"></td>
+          <td class="td" id="V2Value_4"></td>
+          <td class="td" id="V2Power_4"></td>
+          <td class="td" id="I1Value_4"></td>
+          <td class="td" id="I2Value_4"></td>
+         
+        </tr>
+        <tr>
+          <td class="td">5.</td>
+          <td class="td" id="R1Value_5"></td>
+          <td class="td" id="R1Power_5"></td>
+          <td class="td" id="R2Value_5"></td>
+          <td class="td" id="R2Power_5"></td>
+          <td class="td" id="R3Value_5"></td>
+          <td class="td" id="R3Power_5"></td>
+          <td class="td" id="V1Value_5"></td>
+          <td class="td" id="V1Power_5"></td>
+          <td class="td" id="V2Value_5"></td>
+          <td class="td" id="V2Power_5"></td>
+          <td class="td" id="I1Value_5"></td>
+          <td class="td" id="I2Value_5"></td>
+         
+        </tr>
+      </tbody>
+      </table>
+<br><br>
+    </div>
+     
+    </div>
+
+    
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="index.js"></script>
+
+    <!-- Algebra -->
+    <script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/nerdamer.core.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Algebra.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Calculus.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nerdamer@latest/Solve.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+   
+    
+  </body>
+</html>
